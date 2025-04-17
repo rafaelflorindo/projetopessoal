@@ -1,0 +1,16 @@
+.bottom{
+    background-color: #106f16;
+    padding: 2px;
+    width: 100px;
+    border-radius: 7px;
+    margin: 10px;
+}
+.textBottom{
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+.bottom:hover{
+    background-color: #005d04;
+    transform: scale(1.1);
+}

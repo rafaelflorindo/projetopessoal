@@ -17,16 +17,14 @@ const Footer = () => {
             </div>
 
             <div className="footerSocials">
-                <a href="https://github.com/seuusuario" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/seuusuario" target="_blank">LinkedIn</a>
-                <a href="https://lattes.cnpq.br/..." target="_blank">Lattes</a>
+                <a href="https://github.com/rafaelflorindo" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/rafaelflorindo" target="_blank">LinkedIn</a>
+                <a href="http://lattes.cnpq.br/7246554526271622" target="_blank">Lattes</a>
             </div>
 
             <div className="footerCredits">
-                © 2025 Seu Nome. Todos os direitos reservados. Desenvolvido com React.
+                © 2025 Rafael Florindo. Todos os direitos reservados. Desenvolvido com React.
             </div>
-
-            <a className="backToTop" href="#">↑ Voltar ao topo</a>
         </footer>
 
     )

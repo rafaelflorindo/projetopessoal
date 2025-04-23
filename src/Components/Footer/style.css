@@ -11,6 +11,7 @@ footer {
 }
 
 .footerNavegation ul {
+
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +22,7 @@ footer {
 }
 
 .footerNavegation ul li {
+  margin-top: 20px;
   position: relative;
   cursor: pointer;
   font-size: 0.95rem;
@@ -42,6 +44,8 @@ footer {
 }
 
 .footerSocials {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
@@ -65,17 +69,6 @@ footer {
   text-align: center;
 }
 
-.backToTop {
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: #aaa;
-  margin-top: 10px;
-  transition: color 0.3s ease;
-}
-
-.backToTop:hover {
-  color: #fff;
-}
 
 /* Links da navegação do rodapé */
 .footerNavegation ul li a {
@@ -97,15 +90,4 @@ footer {
 
 .footerSocials a:hover {
   color: #ffffff;
-}
-
-/* Link de “Voltar ao topo” */
-.backToTop {
-  color: #888888;            /* cinza médio */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.backToTop:hover {
-  color: #cccccc;            /* cinza mais claro no hover */
 }

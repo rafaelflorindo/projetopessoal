@@ -5,10 +5,17 @@
 [![GitHub forks](https://img.shields.io/github/forks/rafaelflorindo/projetopessoal?style=social)](https://github.com/rafaelflorindo/projetopessoal/network)
 [![License](https://img.shields.io/github/license/rafaelflorindo/projetopessoal)](https://github.com/rafaelflorindo/projetopessoal/blob/main/LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/rafaelflorindo/projetopessoal)](https://github.com/rafaelflorindo/projetopessoal/commits/main)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?s=https://github.com/rafaelflorindo/projetopessoal)
 
 ---
 
 Este repositório reúne projetos desenvolvidos de forma independente com foco em aprendizado, prática de tecnologias e demonstração de habilidades em desenvolvimento de software.
+
+## 🌐 Projeto em Produção
+
+Você pode acessar o projeto hospedado na Vercel através do link abaixo:
+
+🔗 [projetopessoal-kohl.vercel.app](https://projetopessoal-kohl.vercel.app/)
 
 ## 🧠 Objetivo
 

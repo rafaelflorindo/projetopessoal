@@ -1,121 +1,106 @@
+/* ---------- Estilos do MENU (NAV) ---------- */
+
 nav {
   background-color: #e0e0e0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-bottom: 1px solid #ccc;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-nav ul {
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  padding: 10px;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+.menu {
   display: flex;
   gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
+  transition: transform 0.3s ease;
 }
 
-nav ul li {
-  font-weight: 500;
-  font-family: 'Roboto', sans-serif;
+.menu li {
   padding: 8px 14px;
   border-radius: 5px;
   transition: background-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
 }
 
-/* Ajuste direto para os links */
-nav ul li a {
-  color: #333; /* Cor do texto dos links */
-  text-decoration: none; /* Remove o sublinhado padrão */
-  display: block; /* Torna o link de bloco para ocupar todo o espaço do li */
-  padding: 8px 14px; /* Mesma quantidade de padding do li */
+.menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 8px 14px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito de hover para os links */
-nav ul li a:hover {
-  background-color: #d0d0d0; /* Cor de fundo ao passar o mouse */
-  color: #000; /* Cor do texto no hover */
+.menu li a:hover {
+  background-color: #d0d0d0;
+  color: #000;
 }
 
+/* ---------- RESPONSIVIDADE ---------- */
 
-/*nav {
-    background-color: #d2f2dd;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #a2d6b3;
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    color: #134d2a;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-    cursor: pointer;
-  }
-  
-  nav ul li:hover {
-    background-color: #1a7f37;
-    color: #fff;
+@media (max-width: 768px) {
+  nav {
+    align-items: flex-start;
   }
 
-  */
-  
+  .menu-toggle {
+    display: block;
+  }
 
-/*nav {
-    background-color: #003d02; 
-    height: 50px;
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #e0e0e0;
+    padding: 10px 0;
+    transform: translateY(-100%);
+  }
+
+  .menu.aberto {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    transform: translateY(0);
+  }
 
-nav ul {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-}
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
 
-nav {
-    background-color: #003d02; 
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+  .menu li a {
+    padding: 10px 0;
+    width: 100%;
+    font-size: 1rem;
+  }
 
-nav ul {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-}
+  /* Overlay do fundo */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 5;
+  }
 
-nav ul li {
-    color: #f0f0f0;
-    font-weight: 500;
-    font-family: "Roboto", sans-serif;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    cursor: pointer;
+  .overlay.aberto {
+    display: block;
+  }
 }
-
-nav ul li:hover {
-    background-color: #208127; 
-    color: #ffffff;
-}
-*/

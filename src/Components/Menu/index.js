@@ -1,17 +1,26 @@
 import { Link } from 'react-router-dom';
-import './style.css'
+import { useState } from 'react';
+import './style.css';
 
 const Menu = () => {
+  const [aberto, setAberto] = useState(false);
+
+  const toggleMenu = () => setAberto(!aberto);
+  const fecharMenu = () => setAberto(false);
+
   return (
     <nav>
-      <ul>
-      <li><Link to="/">Início</Link></li>
-        <li><Link to="/sobre-mim">Sobre Mim</Link></li>
-        <li><Link to="/disciplinas">Disciplinas</Link></li>
-        <li><Link to="/projetos">Projetos</Link></li>
-        <li><Link to="/publicacoes">Publicações</Link></li>
-        <li><Link to="/material-didatico">Material Didático</Link></li>
-        <li><Link to="/contato">Contato</Link></li>
+      <div className="menu-toggle" onClick={toggleMenu}>
+      {aberto ? '✖' : '☰'}
+      </div>
+      <ul className={`menu ${aberto ? 'aberto' : ''}`}>
+        <li><Link to="/" onClick={fecharMenu}>Início</Link></li>
+        <li><Link to="/sobre-mim" onClick={fecharMenu}>Sobre Mim</Link></li>
+        <li><Link to="/disciplinas" onClick={fecharMenu}>Disciplinas</Link></li>
+        <li><Link to="/projetos" onClick={fecharMenu}>Projetos</Link></li>
+        <li><Link to="/publicacoes" onClick={fecharMenu}>Publicações</Link></li>
+        <li><Link to="/material-didatico" onClick={fecharMenu}>Material Didático</Link></li>
+        <li><Link to="/contato" onClick={fecharMenu}>Contato</Link></li>
       </ul>
     </nav>
   );

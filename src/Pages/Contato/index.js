@@ -15,18 +15,6 @@ const Contatos = () => {
         // Aqui você poderá enviar para a API futuramente:
         console.log('Enviando dados...', dados);
 
-        // Exemplo com fetch:
-        /*
-        fetch('https://sua-api.com/contato', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(dados)
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.error(err));
-        */
-
         // Limpar campos após envio
         setNome('');
         setEmail('');
@@ -53,7 +41,8 @@ const Contatos = () => {
                     <button type="submit">Enviar</button>
                 </div>
 
-                {dadosEnviar && (
+                {
+                dadosEnviar && (
                     <div style={{ marginTop: '20px' }}>
                         <h4>Dados enviados:</h4>
                         <p><strong>Nome:</strong> {dadosEnviar.nome}</p>

@@ -1,107 +1,90 @@
 footer {
+  background-color: #2f2f2f;
+  color: #dcdcdc;
+  padding: 20px 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  background: #464646;
-  color: #bebebe;
-  padding: 30px 20px;
-  padding-top: 50px;
-  font-family: Arial, sans-serif;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  border-top: 2px solid #444;
+  gap: 15px;
 }
 
-#footer-container {
+.footerNavegation ul {
+  list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
   flex-wrap: wrap;
-  max-width: 1300px;
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #bebebe;
-}
-
-.footer-section {
-  max-width: 300px;
-  width: 100%;
-}
-
-.footer-section h3 {
-  font-size: 1.3em;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #bebebe;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-.footer-section p, .footer-section ul {
-  font-size: 0.9em;
-}
-
-.footer-section ul {
-  list-style-type: none; /* Remove os marcadores de lista */
+  gap: 20px;
   padding: 0;
   margin: 0;
+  justify-content: center;
 }
 
-.footer-section ul li {
-  margin: 5px 0;
+.footerNavegation ul li {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.95rem;
 }
 
-.footer-section ul li a {
-  color: #bebebe;
+.footerNavegation ul li::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #aaaaaa;
+  transition: width 0.3s ease;
+}
+
+.footerNavegation ul li:hover::after {
+  width: 100%;
+}
+
+.footerSocials {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footerSocials a {
+  color: #bfbfbf;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
-  color: #fff; /* Cor do link ao passar o mouse */
-  transform: translateY(-3px); /* Efeito de leve deslocamento no hover */
+.footerSocials a:hover {
+  color: #ffffff;
 }
 
-.social {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.social a {
-  color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.social a:hover {
-  transform: translateY(-5px);
-}
-
-.footer-bottom {
+.footerCredits {
+  font-size: 0.85rem;
+  opacity: 0.7;
   text-align: center;
-  padding-top: 10px;
-  font-size: 0.9em;
-  opacity: 0.8;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  #footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 25px;
-  }
+/* Links da navegação do rodapé */
+.footerNavegation ul li a {
+  color: #bfbfbf;            /* cinza claro padrão */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-  .footer-section {
-    max-width: 100%;
-  }
+.footerNavegation ul li a:hover {
+  color: #ffffff;            /* branco puro no hover */
+}
 
-  .footer-section ul li {
-    text-align: center;
-  }
+/* Links das redes sociais */
+.footerSocials a {
+  color: #bfbfbf;            /* mesma cor dos links acima */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-  .footer-bottom {
-    text-align: center;
-  }
+.footerSocials a:hover {
+  color: #ffffff;
 }

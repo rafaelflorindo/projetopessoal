@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "5f7efae5-ed11-4dc3-8121-c018f5284873"
+      }
+    },
+    "android": {
+      "package": "com.rafaelflorindo.projetopessoal"
+    }
+  }
+}

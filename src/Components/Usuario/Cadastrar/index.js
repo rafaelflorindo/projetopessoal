@@ -8,6 +8,7 @@ const CadastroUsuario = () => {
     const [telefone, setTelefone] = useState('');
     const [senha , setSenha] = useState('');
     const [reSenha, setReSenha] = useState('');
+    const [permissao, setPermissao]= useState('Comum');
     
     const [mensagem, setMensagem] = useState('');
     const [dadosEnviar, setDadosEnviar] = useState('');
@@ -15,7 +16,7 @@ const navigate = useNavigate();
     const enviarFormulario = async(e) => {
         e.preventDefault();
 
-        if(!nome || !email || !telefone || !senha || !reSenha){
+        if(!nome || !email || !telefone || !senha || !reSenha || !permissao){
             alert("Todos os campos são de preenchimento Obrigatório");
             return
         }
@@ -25,16 +26,21 @@ const navigate = useNavigate();
             return
         }
 
-        const dados = { nome, email, telefone, senha};
+        const dados = { nome, email, telefone, senha, permissao};
         setDadosEnviar(dados)
 
         console.log('Enviando dados...', dados);
         setMensagem("Usuário cadastrado com sucesso!!!")
         try{
-            const response = await fetch('http://localhost:5000/usuarios', {
+            const tokenLogin = localStorage.getItem('token');
+            const response = await fetch('http://localhost:5000/usuarios/create/', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(dados)
+            }, {
+                headers: {
+                    Authorization: `Bearer ${tokenLogin}`,
+                }
             })
 
             const data = await response.json();
@@ -55,6 +61,7 @@ const navigate = useNavigate();
         setTelefone('');
         setSenha('');
         setReSenha('');
+        setPermissao('');
     };
 
     return (

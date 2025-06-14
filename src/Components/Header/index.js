@@ -7,7 +7,7 @@ import perfil from './perfilRafael.jpg'
 const Header = ()=>{
 
     const navigate = useNavigate();
-    
+
     const [usuario, setUsuario] = useState(null);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Header = ()=>{
             <h1 className="nome">Rafael Alves Florindo</h1>
             {usuario && (
                 <div style={{ position: 'absolute', top: 10, right: 20 }}>
-                    <span>Olá, {usuario.data.email}</span>
+                    <span>Olá, {usuario.data.nome}</span>
                     <button onClick={Logout} style={{ marginLeft: 10 }}>Logout</button>
                 </div>
             )}

@@ -14,8 +14,13 @@ const EditarUsuario = () => {
     const navigate = useNavigate();
 
     const buscarUsuarios = async() => {
-        try{            
-            const resposta = await fetch(`http://localhost:5000/usuarios/${id}`)          
+        const tokenLogin = localStorage.getItem('token');
+        try{
+            const resposta = await fetch('http://localhost:5000/usuarios/listAll', {
+                headers: {
+                    Authorization: `Bearer ${tokenLogin}`,
+                }
+            } )          
             
             const dados = await resposta.json(); 
             if (!resposta.ok) throw new Error(dados.error || "Erro ao atualizar");
@@ -41,10 +46,15 @@ const EditarUsuario = () => {
         setDadosEnviar(dados)
         
         try{
+            const tokenLogin = localStorage.getItem('token');
             const response = await fetch(`http://localhost:5000/usuarios/${id}`, {
                 method: 'PUT',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(dados)
+            }, {
+                headers: {
+                    Authorization: `Bearer ${tokenLogin}`,
+                }
             })
 
             const data = await response.json();

@@ -24,9 +24,8 @@ const Auth = () => {
             setMensagem("Todos os campos são de preenchimento obrigatório.");
             return;
         }
-        setLoading(true); // Começa o loader
+        setLoading(true);
         const dados = { email, senha };
-        console.log('Enviando dados...', dados);
 
         try {
             const response = await fetch('http://localhost:5000/auth/login', {
@@ -44,7 +43,9 @@ const Auth = () => {
             }
 
             localStorage.setItem("usuario", JSON.stringify(data));
-            
+            localStorage.setItem('token', data.token);
+
+            //await AsyncStorage.setItem('usuario', usuario);
             setMensagem("Usuário autenticado com sucesso!");
             setTimeout(() => {
                     setLoading(false);
@@ -60,7 +61,6 @@ const Auth = () => {
             console.error(error);
             setMensagem("Erro na conexão com o servidor.");
             setLoading(false); // Para loader no catch
-
         }
     };
 

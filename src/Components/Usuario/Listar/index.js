@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './index.css'
+
 import EditarUsuario from '../Editar';
 
 const ListarUsuario = () => {
@@ -8,8 +9,15 @@ const ListarUsuario = () => {
     const navigate = useNavigate();
 
     const buscarUsuarios = async() => {
+        const tokenLogin = localStorage.getItem('token');
         try{
-            const resposta = await fetch('http://localhost:5000/usuarios')          
+            const resposta = await fetch('http://localhost:5000/usuarios/listAll', {
+                headers: {
+                    Authorization: `Bearer ${tokenLogin}`,
+                }
+            } 
+
+            )          
             if(!resposta.ok){
                 console.log(resposta.error)
             }
@@ -18,7 +26,9 @@ const ListarUsuario = () => {
         }catch(error){
             console.log(error);
         }
+
     };
+
     useEffect(() => {
         buscarUsuarios();
     }, []);

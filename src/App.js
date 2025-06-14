@@ -23,6 +23,7 @@ function AppContent() {
   const location = useLocation();
 
   const estaNaPaginaLogin = location.pathname === '/auth';
+  
   const usuario = localStorage.getItem("usuario");
 
   return (
